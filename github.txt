@@ -1,2 +1,183 @@
-texto
-teste
+[LP-A01] Quando estamos programando, um dos passos mais importantes
+é tratar adequadamente a entrada e a saída de dados, sendo assim:
+Faça um programa que leia o nome de uma pessoa e mostre uma
+mensagem de boas-vindas para ela.
+Exemplo:
+ENTRADA
+Rafael
+SAÍDA
+Olá Rafael, seja muito bem-vindo!
+
+
+RESOLUÇÃO:
+
+nome = input("Digite seu nome: ")
+print(f"Olá {nome}, seja muito bem-vindo(a)!")
+
+
+[LP-A01] Quando estamos programando. alguns dos passos mais importantes
+são tratar adequadamente a entrada e a saída dos dados, e manipulá-
+los corretamente, usando por exemplo, operações aritméticas.
+Sendo assim, faça um programa que leia um número de ponto flutuante
+(Número Real) e mostre na tela o seu dobro e a sua terça parte.
+Exemplo:
+ENTRADA:
+Número: 2.5
+SAÍDA:
+Dobro: 5.0
+Terça Parte: 0,83
+
+
+RESOLUÇÃO:
+
+numero = float(input("Digite o número desejado: "))
+
+dobro = numero * 2
+print(f"O dobro do número digitado é:{dobro} ")
+
+divisao = numero /3
+print(f"A terça parte do número digitado é: {divisao:.2f}")
+
+
+[LP-A01] O Flash, O Super Herói incrivelmente rápido da DC, tem a força de
+aceleração, uma energia do espaço-tempo, como fonte dos seus
+poderes. Para alcançar a velocidade que deseja, o Flash absorve o
+espaço e o tempo da força de aceleração e a transforma em velocidade.
+Assim o Flash pediu para que você crie um programa que calcule sua
+velocidade dado o espaço e o tempo.
+A Velocidade pode ser calculada pela fórmula:
+Velocidade = Espaço / Tempo
+Entrada: Seu programa deve receber dois números inteiros o espaço e
+o tempo, respectivamente.
+Saída: A saída consiste em uma única linha contendo a velocidade
+alcançada.
+Exemplo:
+ENTRADA:
+Espaço: 100
+Tempo: 10
+SAÍDA:
+Velocidade: 10
+
+RESOLUÇÃO: 
+
+espaco = float(input("Digite o espaço: "))
+tempo = float(input("Digite o tempo: "))
+
+velocidade = espaco / tempo
+print(f"A velocidade alcançada é: {velocidade:.1f}")
+
+
+
+
+[LP-A01]Faça um programa para o cálculo de uma folha de pagamento, sabendo
+que os descontos são do imposto de renda, que depende do salário
+bruto (conforme tabela abaixo) e 3% para o Sindicato e que o FGTS
+corresponde a 11% do salário bruto, mas não é descontado (é a
+empresa que deposita.)
+O salário líquido corresponde ao salário bruto menos os descontos. O
+programa deverá pedir ao usuário o valor da sua hora e a quantidade de
+horas trabalhadas no mês.
+• a. Desconto do IR;
+• b. Salário Bruto ate R$900,00 (inclusive) – Isento;
+• c. Salário Bruto de R$ 1500, 00 (inclusive) – desconto de 5%;
+• d. Salario bruto até R$ 2500,00 (Inclusive) – desconto de 10%;
+• e. Salário bruto acima de 2500 – Desconto de 20%.
+Imprima na tela as informações, dispostas conforme o exemplo abaixo,
+no exemplo valor da hora é 5 e a quantidade de horas é 220.
+Salário bruto (5 * 220) : R$ 1100,00
+( – ) IR (5%) : R$ 55,00
+( – ) INSS ( 10% ) : R$ 110,00
+( – ) Sindicato(3%) : R$ 33,00
+FGTS ( 11%) : R$ 121,00
+Total de descontos : R$ 198,00
+Salário Líquido : R$ 902,00
+
+
+RESOLUÇÃO:
+
+valorHora = float(input("Digite o valor da hora trabalhada: "))
+quantidadeHora = float(input("Digite a quantidade de horas trabalhadas: "))
+
+salarioBruto = valorHora * quantidadeHora
+print(f"Salário bruto: R$ {salarioBruto}")
+
+impostoRenda = salarioBruto * 0.05
+print(f"( – ) IR (5%): R$ {impostoRenda:.2f}")
+
+inss = salarioBruto * 0.1
+print(f"( – ) INSS (10%): R$ {inss:.2f}")
+
+sindicato = salarioBruto * 0.03
+print(f"( – ) Sindicato (3%): R$ {sindicato:.2f}")
+
+fgts = salarioBruto * 0.11
+print(f"FGTS (11%): R$ {fgts:.2f}")
+
+totalDescontos = (impostoRenda+inss+sindicato)
+print(f"Total de Descontos: R$ {totalDescontos}")
+
+salarioLiquido = salarioBruto - totalDescontos
+print(f"Salário Líquido: R$ {salarioLiquido}")
+
+
+
+- CONDICIONAL VERIFICAR, APRESENTA ERROS
+
+if salarioBruto > 900 or salarioBruto <= 900:
+    print("Isento")
+
+elif salarioBruto > 1.500 or salarioBruto <= 1.500:
+impostoRenda = salarioBruto * 0.05
+    print(f"( – ) IR (5%): R$ {impostoRenda:.2f}")
+
+elif salarioBruto > 2.500 or salarioBruto <= 2.500:
+impostoRenda = salarioBruto * 0.1
+    print(f"( – ) IR (10%): R$ {impostoRenda:.2f}")
+
+elif salarioBruto > 2.500:
+impostoRenda = salarioBruto * 0.2
+    print(f"( – ) IR (20%): R$ {impostoRenda:.2f}")
+
+
+
+[LP-A01]Um determinado grupo empresarial resolveu dar um aumento de salário
+aos seus colaboradores e, para isso, contrataram você para
+desenvolver um programa que calculará os reajustes.
+Faça um programa que recebe o salário de um colaborador, e calcule o
+reajuste segundo os critérios abaixo, que deverá exibir o novo salário,
+baseado no salário atual.
+1. Salários até R$ 280,00 (incluindo): aumento de 20%,
+2. Salários entre R$ 280,00 e R$700,00: aumento de 15%;
+3. Salários entre R$ 700,00 e R$ 1500,00: aumento de 10%;
+4. Salários de R$ 1500,00 em diante: aumento de 5%;
+Exemplo:
+ENTRADA:
+700.00
+SAÍDA:
+805.00
+
+
+
+RESOLUÇÃO: POSSUI ERROS- AJUSTAR
+
+salarioAtual = float(input("Digite o seu salário atual: "))
+
+
+if salarioAtual < 280 or salarioAtual <= 280:
+    salarioReajuste = salarioAtual * 0.2
+    print(f"Seu salário após o reajuste é: R$ {salarioReajuste:.2f}")
+
+elif salarioAtual > 281 or salarioAtual <= 700:
+    salarioReajuste = salarioAtual * 0.15
+    print(f"Seu salário após o reajuste é: R$ {salarioReajuste:.2f}")
+
+elif salarioAtual > 701 or salarioAtual <= 1.500:
+    salarioReajuste = salarioAtual * 0.1
+    print(f"Seu salário após o reajuste é: R$ {salarioReajuste:.2f}")
+
+elif salarioAtual > 1.501:
+    salarioReajuste = salarioAtual * 0.5
+    print(f"Seu salário após o reajuste é: R$ {salarioReajuste:.2f}")
+
+else:
+    print("invalido")
